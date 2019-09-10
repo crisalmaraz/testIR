@@ -1,0 +1,453 @@
+warning: LF will be replaced by CRLF in node_modules/clean-css/History.md.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in node_modules/clean-css/LICENSE.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in node_modules/clean-css/README.md.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in node_modules/clean-css/lib/clean.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in node_modules/clean-css/lib/tokenizer/tokenize.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in node_modules/clean-css/lib/utils/split.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in node_modules/clean-css/package.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in node_modules/source-map/README.md.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in node_modules/source-map/package.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in package-lock.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in routes/index.js.
+The file will have its original line endings in your working directory
+[1mdiff --git a/node_modules/.bin/cleancss b/node_modules/.bin/cleancss[m
+[1mdeleted file mode 100644[m
+[1mindex c6992ac..0000000[m
+[1m--- a/node_modules/.bin/cleancss[m
+[1m+++ /dev/null[m
+[36m@@ -1,15 +0,0 @@[m
+[31m-#!/bin/sh[m
+[31m-basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")[m
+[31m-[m
+[31m-case `uname` in[m
+[31m-    *CYGWIN*) basedir=`cygpath -w "$basedir"`;;[m
+[31m-esac[m
+[31m-[m
+[31m-if [ -x "$basedir/node" ]; then[m
+[31m-  "$basedir/node"  "$basedir/../clean-css/bin/cleancss" "$@"[m
+[31m-  ret=$?[m
+[31m-else [m
+[31m-  node  "$basedir/../clean-css/bin/cleancss" "$@"[m
+[31m-  ret=$?[m
+[31m-fi[m
+[31m-exit $ret[m
+[1mdiff --git a/node_modules/.bin/cleancss.cmd b/node_modules/.bin/cleancss.cmd[m
+[1mdeleted file mode 100644[m
+[1mindex ce4efa2..0000000[m
+[1m--- a/node_modules/.bin/cleancss.cmd[m
+[1m+++ /dev/null[m
+[36m@@ -1,7 +0,0 @@[m
+[31m-@IF EXIST "%~dp0\node.exe" ([m
+[31m-  "%~dp0\node.exe"  "%~dp0\..\clean-css\bin\cleancss" %*[m
+[31m-) ELSE ([m
+[31m-  @SETLOCAL[m
+[31m-  @SET PATHEXT=%PATHEXT:;.JS;=;%[m
+[31m-  node  "%~dp0\..\clean-css\bin\cleancss" %*[m
+[31m-)[m
+\ No newline at end of file[m
+[1mdiff --git a/node_modules/clean-css/History.md b/node_modules/clean-css/History.md[m
+[1mindex 2d6a203..5ebcec2 100644[m
+[1m--- a/node_modules/clean-css/History.md[m
+[1m+++ b/node_modules/clean-css/History.md[m
+[36m@@ -1,12 +1,232 @@[m
+[31m-[3.4.28 / 2017-07-14](https://github.com/jakubpawlowicz/clean-css/compare/v3.4.27...v3.4.28)[m
+[32m+[m[32m[4.2.1 / 2018-08-07](https://github.com/jakubpawlowicz/clean-css/compare/v4.2.0...v4.2.1)[m
+ ==================[m
+ [m
+[31m-* Backports [#957](https://github.com/jakubpawlowicz/clean-css/issues/957) - `0%` minification of `width` property.[m
+[32m+[m[32m* Fixes giving `breakWith` option via a string.[m
+ [m
+[31m-[3.4.27 / 2017-06-09](https://github.com/jakubpawlowicz/clean-css/compare/v3.4.26...v3.4.27)[m
+[32m+[m[32m[4.2.0 / 2018-08-02](https://github.com/jakubpawlowicz/clean-css/compare/4.1...4.2.0)[m
+ ==================[m
+ [m
+[31m-* Fixes [#948](https://github.com/jakubpawlowicz/clean-css/issues/948) - enforces line break before source map comment.[m
+[32m+[m[32m* Adds `process` method for compatibility with optimize-css-assets-webpack-plugin.[m
+[32m+[m[32m* Fixed issue [#861](https://github.com/jakubpawlowicz/clean-css/issues/861) - new `transition` property optimizer.[m
+[32m+[m[32m* Fixed issue [#895](https://github.com/jakubpawlowicz/clean-css/issues/895) - ignoring specific styles.[m
+[32m+[m[32m* Fixed issue [#947](https://github.com/jakubpawlowicz/clean-css/issues/947) - selector based filtering.[m
+[32m+[m[32m* Fixed issue [#964](https://github.com/jakubpawlowicz/clean-css/issues/964) - adds configurable line breaks.[m
+[32m+[m[32m* Fixed issue [#986](https://github.com/jakubpawlowicz/clean-css/issues/986) - level 2 optimizations and CSS 4 colors.[m
+[32m+[m[32m* Fixed issue [#1000](https://github.com/jakubpawlowicz/clean-css/issues/1000) - carriage return handling in tokenizer.[m
+[32m+[m[32m* Fixed issue [#1038](https://github.com/jakubpawlowicz/clean-css/issues/1038) - `font-variation-settings` quoting.[m
+[32m+[m[32m* Fixes ReDOS vulnerabilities in validator code.[m
+[32m+[m
+[32m+[m[32m[4.1.11 / 2018-03-06](https://github.com/jakubpawlowicz/clean-css/compare/v4.1.10...v4.1.11)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Backports fixes to ReDOS vulnerabilities in validator code.[m
+[32m+[m
+[32m+[m[32m[4.1.10 / 2018-03-05](https://github.com/jakubpawlowicz/clean-css/compare/v4.1.9...v4.1.10)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#988](https://github.com/jakubpawlowicz/clean-css/issues/988) - edge case in dropping default animation-duration.[m
+[32m+[m[32m* Fixed issue [#989](https://github.com/jakubpawlowicz/clean-css/issues/989) - edge case in removing unused at rules.[m
+[32m+[m[32m* Fixed issue [#1001](https://github.com/jakubpawlowicz/clean-css/issues/1001) - corrupted tokenizer state.[m
+[32m+[m[32m* Fixed issue [#1006](https://github.com/jakubpawlowicz/clean-css/issues/1006) - edge case in handling invalid source maps.[m
+[32m+[m[32m* Fixed issue [#1008](https://github.com/jakubpawlowicz/clean-css/issues/1008) - edge case in breaking up `font` shorthand.[m
+[32m+[m
+[32m+[m[32m[4.1.9 / 2017-09-19](https://github.com/jakubpawlowicz/clean-css/compare/v4.1.8...v4.1.9)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#971](https://github.com/jakubpawlowicz/clean-css/issues/971) - edge case in removing unused at rules.[m
+[32m+[m
+[32m+[m[32m[4.1.8 / 2017-09-02](https://github.com/jakubpawlowicz/clean-css/compare/v4.1.7...v4.1.8)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#959](https://github.com/jakubpawlowicz/clean-css/issues/959) - regression in shortening long hex values.[m
+[32m+[m[32m* Fixed issue [#960](https://github.com/jakubpawlowicz/clean-css/issues/960) - better explanation of `efficiency` stat.[m
+[32m+[m[32m* Fixed issue [#965](https://github.com/jakubpawlowicz/clean-css/issues/965) - edge case in parsing comment endings.[m
+[32m+[m[32m* Fixed issue [#966](https://github.com/jakubpawlowicz/clean-css/issues/966) - remote `@import`s referenced from local ones.[m
+[32m+[m
+[32m+[m[32m[4.1.7 / 2017-07-14](https://github.com/jakubpawlowicz/clean-css/compare/v4.1.6...v4.1.7)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#957](https://github.com/jakubpawlowicz/clean-css/issues/957) - `0%` minification of `width` property.[m
+[32m+[m
+[32m+[m[32m[4.1.6 / 2017-07-08](https://github.com/jakubpawlowicz/clean-css/compare/v4.1.5...v4.1.6)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#887](https://github.com/jakubpawlowicz/clean-css/issues/887) - edge case in serializing comments.[m
+[32m+[m[32m* Fixed issue [#953](https://github.com/jakubpawlowicz/clean-css/issues/953) - beautify breaks attribute selectors.[m
+[32m+[m
+[32m+[m[32m[4.1.5 / 2017-06-29](https://github.com/jakubpawlowicz/clean-css/compare/v4.1.4...v4.1.5)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#945](https://github.com/jakubpawlowicz/clean-css/issues/945) - hex RGBA colors in IE filters.[m
+[32m+[m[32m* Fixed issue [#952](https://github.com/jakubpawlowicz/clean-css/issues/952) - parsing `@page` according to CSS3 spec.[m
+[32m+[m
+[32m+[m[32m[4.1.4 / 2017-06-14](https://github.com/jakubpawlowicz/clean-css/compare/v4.1.3...v4.1.4)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#950](https://github.com/jakubpawlowicz/clean-css/issues/950) - bug in removing unused `@font-face` rules.[m
+[32m+[m
+[32m+[m[32m[4.1.3 / 2017-05-18](https://github.com/jakubpawlowicz/clean-css/compare/v4.1.2...v4.1.3)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#946](https://github.com/jakubpawlowicz/clean-css/issues/946) - tokenizing `-ms-grid-columns` repeat syntax.[m
+[32m+[m
+[32m+[m[32m[4.1.2 / 2017-05-10](https://github.com/jakubpawlowicz/clean-css/compare/v4.1.1...v4.1.2)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#939](https://github.com/jakubpawlowicz/clean-css/issues/939) - semicolon after `@apply` at rule.[m
+[32m+[m[32m* Fixed issue [#940](https://github.com/jakubpawlowicz/clean-css/issues/940) - handling more `font` keywords.[m
+[32m+[m[32m* Fixed issue [#941](https://github.com/jakubpawlowicz/clean-css/issues/941) - breaking up vendor prefixed `animation`.[m
+[32m+[m
+[32m+[m[32m[4.1.1 / 2017-05-08](https://github.com/jakubpawlowicz/clean-css/compare/v4.1.0...v4.1.1)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#938](https://github.com/jakubpawlowicz/clean-css/issues/938) - removing unused at-rules with `!important`.[m
+[32m+[m
+[32m+[m[32m[4.1.0 / 2017-05-07](https://github.com/jakubpawlowicz/clean-css/compare/4.0...v4.1.0)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Improves longhand-into-shorthand merging mechanism in complex cases as with `border-*` shorthands.[m
+[32m+[m[32m* Fixed issue [#254](https://github.com/jakubpawlowicz/clean-css/issues/254) - adds `font` property optimizer.[m
+[32m+[m[32m* Fixed issue [#525](https://github.com/jakubpawlowicz/clean-css/issues/525) - restores `inherit`-based merging.[m
+[32m+[m[32m* Fixed issue [#755](https://github.com/jakubpawlowicz/clean-css/issues/755) - adds custom handling of remote requests.[m
+[32m+[m[32m* Fixed issue [#860](https://github.com/jakubpawlowicz/clean-css/issues/860) - adds `animation` property optimizer.[m
+[32m+[m[32m* Fixed issue [#862](https://github.com/jakubpawlowicz/clean-css/issues/862) - allows removing unused at rules.[m
+[32m+[m[32m* Fixed issue [#886](https://github.com/jakubpawlowicz/clean-css/issues/886) - better multi pseudo class / element merging.[m
+[32m+[m[32m* Fixed issue [#890](https://github.com/jakubpawlowicz/clean-css/issues/890) - adds toggle to disable empty tokens removal.[m
+[32m+[m[32m* Fixed issue [#893](https://github.com/jakubpawlowicz/clean-css/issues/893) - `inline: false` as alias to `inline: 'none'`.[m
+[32m+[m[32m* Fixed issue [#905](https://github.com/jakubpawlowicz/clean-css/issues/905) - allows disabling selector sorting.[m
+[32m+[m[32m* Fixed issue [#906](https://github.com/jakubpawlowicz/clean-css/issues/906) - improves usability of web UI settings.[m
+[32m+[m[32m* Fixed issue [#908](https://github.com/jakubpawlowicz/clean-css/issues/908) - improved `minify` method signature.[m
+[32m+[m[32m* Fixed issue [#916](https://github.com/jakubpawlowicz/clean-css/issues/916) - maximum number of merged selectors.[m
+[32m+[m[32m* Fixed issue [#920](https://github.com/jakubpawlowicz/clean-css/issues/920) - allows skipping certain properties in level 2 optimizations.[m
+[32m+[m[32m* Fixed issue [#934](https://github.com/jakubpawlowicz/clean-css/issues/934) - smarter longhand into shorthand merging.[m
+[32m+[m
+[32m+[m[32m[4.0.13 / 2017-05-10](https://github.com/jakubpawlowicz/clean-css/compare/v4.0.12...v4.0.13)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Backports [#939](https://github.com/jakubpawlowicz/clean-css/issues/939) - semicolon after `@apply` at rule.[m
+[32m+[m
+[32m+[m[32m[4.0.12 / 2017-04-12](https://github.com/jakubpawlowicz/clean-css/compare/v4.0.11...v4.0.12)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#930](https://github.com/jakubpawlowicz/clean-css/issues/930) - regression in tidying selectors.[m
+[32m+[m
+[32m+[m[32m[4.0.11 / 2017-04-04](https://github.com/jakubpawlowicz/clean-css/compare/v4.0.10...v4.0.11)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#924](https://github.com/jakubpawlowicz/clean-css/issues/924) - `hsl` zero percent eager optimization.[m
+[32m+[m
+[32m+[m[32m[4.0.10 / 2017-03-22](https://github.com/jakubpawlowicz/clean-css/compare/v4.0.9...v4.0.10)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#917](https://github.com/jakubpawlowicz/clean-css/issues/917) - prevents grid area unquoting.[m
+[32m+[m[32m* Backported [#916](https://github.com/jakubpawlowicz/clean-css/issues/916) - maximum number of merged selectors.[m
+[32m+[m[32m* Refixed issue [#556](https://github.com/jakubpawlowicz/clean-css/issues/556) - IE backslash hacks.[m
+[32m+[m
+[32m+[m[32m[4.0.9 / 2017-03-15](https://github.com/jakubpawlowicz/clean-css/compare/v4.0.8...v4.0.9)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#902](https://github.com/jakubpawlowicz/clean-css/issues/902) - case insensitive attribute matchers.[m
+[32m+[m[32m* Fixed issue [#903](https://github.com/jakubpawlowicz/clean-css/issues/903) - web UI and source maps.[m
+[32m+[m[32m* Fixed issue [#907](https://github.com/jakubpawlowicz/clean-css/issues/907) - space after closing brace in `@supports`.[m
+[32m+[m[32m* Fixed issue [#910](https://github.com/jakubpawlowicz/clean-css/issues/910) - too aggressive precision optimizations.[m
+[32m+[m
+[32m+[m[32m[4.0.8 / 2017-02-22](https://github.com/jakubpawlowicz/clean-css/compare/v4.0.7...v4.0.8)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixes edge case in remote stylesheet fetching.[m
+[32m+[m[32m* Fixed issue [#899](https://github.com/jakubpawlowicz/clean-css/issues/899) - regression in optimizing pseudo class arguments.[m
+[32m+[m
+[32m+[m[32m[4.0.7 / 2017-02-14](https://github.com/jakubpawlowicz/clean-css/compare/v4.0.6...v4.0.7)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#891](https://github.com/jakubpawlowicz/clean-css/issues/891) - merging vendor-prefixed pseudo-classes.[m
+[32m+[m
+[32m+[m[32m[4.0.6 / 2017-02-10](https://github.com/jakubpawlowicz/clean-css/compare/v4.0.5...v4.0.6)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#885](https://github.com/jakubpawlowicz/clean-css/issues/885) - unquoting `font-feature-settings`.[m
+[32m+[m
+[32m+[m[32m[4.0.5 / 2017-02-07](https://github.com/jakubpawlowicz/clean-css/compare/v4.0.4...v4.0.5)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#884](https://github.com/jakubpawlowicz/clean-css/issues/884) - handling absolute paths on Windows.[m
+[32m+[m[32m* Fixed issue [#881](https://github.com/jakubpawlowicz/clean-css/issues/881) - incorrect `require` arity.[m
+[32m+[m[32m* Fixed issue [#880](https://github.com/jakubpawlowicz/clean-css/issues/880) - incorrect token type identification.[m
+[32m+[m
+[32m+[m[32m[4.0.4 / 2017-02-04](https://github.com/jakubpawlowicz/clean-css/compare/v4.0.3...v4.0.4)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#879](https://github.com/jakubpawlowicz/clean-css/issues/879) - incorrect handling of spaces in paths.[m
+[32m+[m[32m* Fixed issue [#878](https://github.com/jakubpawlowicz/clean-css/issues/878) - invalid double backslash tokenization.[m
+[32m+[m
+[32m+[m[32m[4.0.3 / 2017-01-30](https://github.com/jakubpawlowicz/clean-css/compare/v4.0.2...v4.0.3)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#875](https://github.com/jakubpawlowicz/clean-css/issues/875) - invalid traversing in semantic merging.[m
+[32m+[m
+[32m+[m[32m[4.0.2 / 2017-01-26](https://github.com/jakubpawlowicz/clean-css/compare/v4.0.1...v4.0.2)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#874](https://github.com/jakubpawlowicz/clean-css/issues/874) - regression in at-rule tokenization.[m
+[32m+[m
+[32m+[m[32m[4.0.1 / 2017-01-25](https://github.com/jakubpawlowicz/clean-css/compare/v4.0.0...v4.0.1)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Fixed issue [#866](https://github.com/jakubpawlowicz/clean-css/issues/866) - edge case in `inline` option.[m
+[32m+[m[32m* Fixed issue [#867](https://github.com/jakubpawlowicz/clean-css/issues/867) - skip optimizing variable values.[m
+[32m+[m[32m* Fixed issue [#868](https://github.com/jakubpawlowicz/clean-css/issues/868) - accept absolute paths in input hash.[m
+[32m+[m[32m* Fixed issue [#872](https://github.com/jakubpawlowicz/clean-css/issues/872) - edge case in CSS tokenization.[m
+[32m+[m
+[32m+[m[32m[4.0.0 / 2017-01-23](https://github.com/jakubpawlowicz/clean-css/compare/v3.4.24...v4.0.0)[m
+[32m+[m[32m==================[m
+[32m+[m
+[32m+[m[32m* Adds more detailed error & warning messages on top of the new tokenizer.[m
+[32m+[m[32m* Disables restructuring optimizations by default until optimized in #533.[m
+[32m+[m[32m* Fixes a bug ignoring incorrect properties in complex restructuring.[m
+[32m+[m[32m* Requires Node.js 4.0+ to run.[m
+[32m+[m[32m* Removes `benchmark` API option as total time is always reported under `stats` property.[m
+[32m+[m[32m* Removes `debug` API switch as stats are always gathered and available under `stats` property.[m
+[32m+[m[32m* Replaces the old tokenizer with a new one which doesn't use any escaping.[m
+[32m+[m[32m* Replaces the old `@import` inlining with one on top of the new tokenizer.[m
+[32m+[m[32m* Re-enables `background-(clip|origin|size)` merging with `background` shorthand.[m
+[32m+[m[32m* Simplifies URL rebasing with a single `rebaseTo` option in API or inferred from `--output` in CLI.[m
+[32m+[m[32m* Splits `inliner` option into `inlineRequest` and `inlineTimeout`.[m
+[32m+[m[32m* Fixed issue [#209](https://github.com/jakubpawlowicz/clean-css/issues/209) - adds output formatting via `format` flag.[m
+[32m+[m[32m* Fixed issue [#290](https://github.com/jakubpawlowicz/clean-css/issues/290) - removes aggressive merging.[m
+[32m+[m[32m* Fixed issue [#432](https://github.com/jakubpawlowicz/clean-css/issues/432) - adds URLs normalization.[m
+[32m+[m[32m* Fixed issue [#460](https://github.com/jakubpawlowicz/clean-css/issues/460) - unescaped semicolon in selector.[m
+[32m+[m[32m* Fixed issue [#657](https://github.com/jakubpawlowicz/clean-css/issues/657) - adds property name validation.[m
+[32m+[m[32m* Fixed issue [#685](https://github.com/jakubpawlowicz/clean-css/issues/685) - adds lowercasing hex colors optimization.[m
+[32m+[m[32m* Fixed issue [#686](https://github.com/jakubpawlowicz/clean-css/issues/686) - adds rounding precision for all units.[m
+[32m+[m[32m* Fixed issue [#703](https://github.com/jakubpawlowicz/clean-css/issues/703) - changes default IE compatibility to 10+.[m
+[32m+[m[32m* Fixed issue [#731](https://github.com/jakubpawlowicz/clean-css/issues/731) - adds granular control over level 2 optimizations.[m
+[32m+[m[32m* Fixed issue [#739](https://github.com/jakubpawlowicz/clean-css/issues/739) - error when a closing brace is missing.[m
+[32m+[m[32m* Fixed issue [#750](https://github.com/jakubpawlowicz/clean-css/issues/750) - allows `width` overriding.[m
+[32m+[m[32m* Fixed issue [#756](https://github.com/jakubpawlowicz/clean-css/issues/756) - adds disabling font-weight optimizations.[m
+[32m+[m[32m* Fixed issue [#758](https://github.com/jakubpawlowicz/clean-css/issues/758) - ignores rules with empty selector.[m
+[32m+[m[32m* Fixed issue [#767](https://github.com/jakubpawlowicz/clean-css/issues/767) - disables remote `@import` inlining by default.[m
+[32m+[m[32m* Fixed issue [#773](https://github.com/jakubpawlowicz/clean-css/issues/773) - adds reordering based on selector specificity.[m
+[32m+[m[32m* Fixed issue [#785](https://github.com/jakubpawlowicz/clean-css/issues/785) - adds `@font-face` de-duplication.[m
+[32m+[m[32m* Fixed issue [#791](https://github.com/jakubpawlowicz/clean-css/issues/791) - resolves imports in-memory if possible.[m
+[32m+[m[32m* Fixed issue [#796](https://github.com/jakubpawlowicz/clean-css/issues/796) - semantic merging for `@media` blocks.[m
+[32m+[m[32m* Fixed issue [#801](https://github.com/jakubpawlowicz/clean-css/issues/801) - smarter `@import` inlining.[m
+[32m+[m[32m* Fixed issue [#806](https://github.com/jakubpawlowicz/clean-css/issues/806) - skip optimizing variable properties.[m
+[32m+[m[32m* Fixed issue [#817](https://github.com/jakubpawlowicz/clean-css/issues/817) - makes `off` disable rounding.[m
+[32m+[m[32m* Fixed issue [#818](https://github.com/jakubpawlowicz/clean-css/issues/818) - disables `px` rounding by default.[m
+[32m+[m[32m* Fixed issue [#828](https://github.com/jakubpawlowicz/clean-css/issues/828) - `-chrome-` hack support.[m
+[32m+[m[32m* Fixed issue [#829](https://github.com/jakubpawlowicz/clean-css/issues/829) - adds more strict selector merging rules.[m
+[32m+[m[32m* Fixed issue [#834](https://github.com/jakubpawlowicz/clean-css/issues/834) - adds extra line break in nested blocks.[m
+[32m+[m[32m* Fixed issue [#836](https://github.com/jakubpawlowicz/clean-css/issues/836) - enables level `0` optimizations.[m
+[32m+[m[32m* Fixed issue [#839](https://github.com/jakubpawlowicz/clean-css/issues/839) - allows URIs in import inlining rules.[m
+[32m+[m[32m* Fixed issue [#840](https://github.com/jakubpawlowicz/clean-css/issues/840) - allows input source map as map object.[m
+[32m+[m[32m* Fixed issue [#843](https://github.com/jakubpawlowicz/clean-css/issues/843) - regression in selector handling.[m
+[32m+[m[32m* Fixed issue [#845](https://github.com/jakubpawlowicz/clean-css/issues/845) - web compatibility of 4.0 branch.[m
+[32m+[m[32m* Fixed issue [#847](https://github.com/jakubpawlowicz/clean-css/issues/847) - regression in handling invalid selectors.[m
+[32m+[m[32m* Fixed issue [#849](https://github.com/jakubpawlowicz/clean-css/issues/849) - disables inlining protocol-less resources.[m
+[32m+[m[32m* Fixed issue [#856](https://github.com/jakubpawlowicz/clean-css/issues/856) - allows `minify` to return a promise.[m
+[32m+[m[32m* Fixed issue [#857](https://github.com/jakubpawlowicz/clean-css/issues/857) - normalizes CleanCSS API interface.[m
+[32m+[m[32m* Fixed issue [#863](https://github.com/jakubpawlowicz/clean-css/issues/863) - adds `transform` callback for custom optimizations.[m
+ [m
+ [3.4.26 / 2017-05-10](https://github.com/jakubpawlowicz/clean-css/compare/v3.4.25...v3.4.26)[m
+ ==================[m
+[1mdiff --git a/node_modules/clean-css/LICENSE b/node_modules/clean-css/LICENSE[m
+[1mindex 32bb13f..bf2f405 100644[m
+[1m--- a/node_modules/clean-css/LICENSE[m
+[1m+++ b/node_modules/clean-css/LICENSE[m
+[36m@@ -1,4 +1,4 @@[m
+[31m-Copyright (C) 2015 JakubPawlowicz.com[m
+[32m+[m[32mCopyright (C) 2017 JakubPawlowicz.com[m
+ [m
+ Permission is hereby granted, free of charge, to any person obtaining a copy[m
+ of this software and associated documentation files (the "Software"), to deal[m
+[1mdiff --git a/node_modules/clean-css/README.md b/node_modules/clean-css/README.md[m
+[1mindex ee08b7a..3f7965b 100644[m
+[1m--- a/node_modules/clean-css/README.md[m
+[1m+++ b/node_modules/clean-css/README.md[m
+[36m@@ -1,252 +1,646 @@[m
+[32m+[m[32m<h1 align="center">[m
+[32m+[m[32m  <br/>[m
+[32m+[m[32m  <img src="https://cdn.rawgit.com/jakubpawlowicz/clean-css/master/logo.v2.svg" alt="clean-css logo" width="525px"/>[m
+[32m+[m[32m  <br/>[m
+[32m+[m[32m  <br/>[m
+[32m+[m[32m</h1>[m
+[32m+[m
+ [![NPM version](https://img.shields.io/npm/v/clean-css.svg?style=flat)](https://www.npmjs.com/package/clean-css)[m
+ [![Linux Build Status](https://img.shields.io/travis/jakubpawlowicz/clean-css/master.svg?style=flat&label=Linux%20build)](https://travis-ci.org/jakubpawlowicz/clean-css)[m
+ [![Windows Build status](https://img.shields.io/appveyor/ci/jakubpawlowicz/clean-css/master.svg?style=flat&label=Windows%20build)](https://ci.appveyor.com/project/jakubpawlowicz/clean-css/branch/master)[m
+ [![Dependency Status](https://img.shields.io/david/jakubpawlowicz/clean-css.svg?style=flat)](https://david-dm.org/jakubpawlowicz/clean-css)[m
+[31m-[![devDependency Status](https://img.shields.io/david/dev/jakubpawlowicz/clean-css.svg?style=flat)](https://david-dm.org/jakubpawlowicz/clean-css#info=devDependencies)[m
+[31m-[m
+[31m-## What is clean-css?[m
+[32m+[m[32m[![NPM Downloads](https://img.shields.io/npm/dm/clean-css.svg)](https://npmcharts.com/compare/clean-css?minimal=true)[m
+[32m+[m[32m[![Twitter](https://img.shields.io/badge/Twitter-@cleancss-blue.svg)](https://twitter.com/cleancss)[m
+ [m
+[31m-Clean-css is a fast and efficient [Node.js](http://nodejs.org/) library for minifying CSS files.[m
+[32m+[m[32mclean-css is a fast and efficient CSS optimizer for [Node.js](http://nodejs.org/) platform and [any modern browser](https://jakubpawlowicz.github.io/clean-css).[m
+ [m
+ According to [tests](http://goalsmashers.github.io/css-minification-benchmark/) it is one of the best available.[m
+ [m
+[32m+[m[32m**Table of Contents**[m
+[32m+[m
+[32m+[m[32m- [Node.js version support](#nodejs-version-support)[m
+[32m+[m[32m- [Install](#install)[m
+[32m+[m[32m- [Use](#use)[m
+[32m+[m[32m  * [Important: 4.0 breaking changes](#important-40-breaking-changes)[m
+[32m+[m[32m  * [What's new in version 4.1](#whats-new-in-version-41)[m
+[32m+[m[32m  * [What's new in version 4.2](#whats-new-in-version-42)[m
+[32m+[m[32m  * [Constructor options](#constructor-options)[m
+[32m+[m[32m  * [Compatibility modes](#compatibility-modes)[m
+[32m+[m[32m  * [Fetch option](#fetch-option)[m
+[32m+[m[32m  * [Formatting options](#formatting-options)[m
+[32m+[m[32m  * [Inlining options](#inlining-options)[m
+[32m+[m[32m  * [Optimization levels](#optimization-levels)[m
+[32m+[m[32m    + [Level 0 optimizations](#level-0-optimizations)[m
+[32m+[m[32m    + [Level 1 optimizations](#level-1-optimizations)[m
+[32m+[m[32m    + [Level 2 optimizations](#level-2-optimizations)[m
+[32m+[m[32m  * [Minify method](#minify-method)[m
+[32m+[m[32m  * [Promise interface](#promise-interface)[m
+[32m+[m[32m  * [CLI utility](#cli-utility)[m
+[32m+[m[32m- [FAQ](#faq)[m
+[32m+[m[32m  * [How to optimize multiple files?](#how-to-optimize-multiple-files)[m
+[32m+[m[32m  * [How to process remote `@import`s correctly?](#how-to-process-remote-imports-correctly)[m
+[32m+[m[32m  * [How to apply arbitrary transformations to CSS properties?](#how-to-apply-arbitrary-transformations-to-css-properties)[m
+[32m+[m[32m  * [How to specify a custom rounding precision?](#how-to-specify-a-custom-rounding-precision)[m
+[32m+[m[32m  * [How to keep a CSS fragment intact?](#how-to-keep-a-css-fragment-intact)[m
+[32m+[m[32m  * [How to preserve a comment block?](#how-to-preserve-a-comment-block)[m
+[32m+[m[32m  * [How to rebase relative image URLs?](#how-to-rebase-relative-image-urls)[m
+[32m+[m[32m  * [How to work with source maps?](#how-to-work-with-source-maps)[m
+[32m+[m[32m  * [How to apply level 1 & 2 optimizations at the same time?](#how-to-apply-level-1--2-optimizations-at-the-same-time)[m
+[32m+[m[32m  * [What level 2 optimizations do?](#what-level-2-optimizations-do)[m
+[32m+[m[32m  * [How to use clean-css with build tools?](#how-to-use-clean-css-with-build-tools)[m
+[32m+[m[32m  * [How to use clean-css from web browser?](#how-to-use-clean-css-from-web-browser)[m
+[32m+[m[32m- [Contributing](#contributing)[m
+[32m+[m[32m  * [How to get started?](#how-to-get-started)[m
+[32m+[m[32m- [Acknowledgments](#acknowledgments)[m
+[32m+[m[32m- [License](#license)[m
+[32m+[m
+[32m+[m[32m# Node.js version support[m
+[32m+[m
+[32m+[m[32mclean-css requires Node.js 4.0+ (tested on Linux, OS X, and Windows)[m
+[32m+[m
+[32m+[m[32m# Install[m
+ [m
+[31m-## Usage[m
+[32m+[m[32m```[m
+[32m+[m[32mnpm install --save-dev clean-css[m
+[32m+[m[32m```[m
+ [m
+[31m-### What are the requirements?[m
+[32m+[m[32m# Use[m
+ [m
+[32m+[m[32m```js[m
+[32m+[m[32mvar CleanCSS = require('clean-css');[m
+[32m+[m[32mvar input = 'a{font-weight:bold;}';[m
+[32m+[m[32mvar options = { /* options */ };[m
+[32m+[m[32mvar output = new CleanCSS(options).minify(input);[m
+ ```[m
+[31m-Node.js 0.10+ (tested on CentOS, Ubuntu, OS X 10.6+, and Windows 7+) or io.js 3.0+[m
+[32m+[m
+[32m+[m[32m## Important: 4.0 breaking changes[m
+[32m+[m
+[32m+[m[32mclean-css 4.0 introduces some breaking changes:[m
+[32m+[m
+[32m+[m[32m* API and CLI interfaces are split, so API stays in this repository while CLI moves to [clean-css-cli](https://github.com/jakubpawlowicz/clean-css-cli);[m
+[32m+[m[32m* `root`, `relativeTo`, and `target` options are replaced by a single `rebaseTo` option - this means that rebasing URLs and import inlining is much simpler but may not be (YMMV) as powerful as in 3.x;[m
+[32m+[m[32m* `debug` option is gone as stats are always provided in output object under `stats` property;[m
+[32m+[m[32m* `roundingPrecision` is disabled by default;[m
+[32m+[m[32m* `roundingPrecision` applies to **all** units now, not only `px` as in 3.x;[m
+[32m+[m[32m* `processImport` and `processImportFrom` are merged into `inline` option which defaults to `local`. Remote `@import` rules are **NOT** inlined by default anymore;[m
+[32m+[m[32m* splits `inliner: { request: ..., timeout: ... }` option into `inlineRequest` and `inlineTimeout` options;[m
+[32m+[m[32m* remote resources without a protocol, e.g. `//fonts.googleapis.com/css?family=Domine:700`, are not inlined anymore;[m
+[32m+[m[32m* changes default Internet Explorer compatibility from 9+ to 10+, to revert the old default use `{ compatibility: 'ie9' }` flag;[m
+[32m+[m[32m* renames `keepSpecialComments` to `specialComments`;[m
+[32m+[m[32m* moves `roundingPrecision` and `specialComments` to level 1 optimizations options, see examples;[m
+[32m+[m[32m* moves `mediaMerging`, `restructuring`, `semanticMerging`, and `shorthandCompacting` to level 2 optimizations options, see examples below;[m
+[32m+[m[32m* renames `shorthandCompacting` option to `mergeIntoShorthands`;[m
+[32m+[m[32m* level 1 optimizations are the new default, up to 3.x it was level 2;[m
+[32m+[m[32m* `keepBreaks` option is replaced with `{ format: 'keep-breaks' }` to ease transition;[m
+[32m+[m[32m* `sourceMap` option has to be a boolean from now on - to specify an input source map pass it a 2nd argument to `minify` method or via a hash instead;[m
+[32m+[m[32m* `aggressiveMerging` option is removed as aggressive merging is replaced by smarter override merging.[m
+[32m+[m
+[32m+[m[32m## What's new in version 4.1[m
+[32m+[m
+[32m+[m[32mclean-css 4.1 introduces the following changes / features:[m
+[32m+[m
+[32m+[m[32m* `inline: false` as an alias to `inline: ['none']`;[m
+[32m+[m[32m* `multiplePseudoMerging` compatibility flag controlling merging of rules with multiple pseudo classes / elements;[m
+[32m+[m[32m* `removeEmpty` flag in level 1 optimizations controlling removal of rules and nested blocks;[m
+[32m+[m[32m* `removeEmpty` flag in level 2 optimizations controlling removal of rules and nested blocks;[m
+[32m+[m[32m* `compatibility: { selectors: { mergeLimit: <number> } }` flag in compatibility settings controlling maximum number of selectors in a single rule;[m
+[32m+[m[32m* `minify` method improved signature accepting a list of hashes for a predictable traversal;[m
+[32m+[m[32m* `selectorsSortingMethod` level 1 optimization allows `false` or `'none'` for disabling selector sorting;[m
+[32m+[m[32m* `fetch` option controlling a function for handling remote requests;[m
+[32m+[m[32m* new `font` shorthand and `font-*` longhand optimizers;[m
+[32m+[m[32m* removal of `optimizeFont` flag in level 1 optimizations due to new `font` shorthand optimizer;[m
+[32m+[m[32m* `skipProperties` flag in level 2 optimizations controlling which properties won't be optimized;[m
+[32m+[m[32m* new `animation` shorthand and `animation-*` longhand optimizers;[m
+[32m+[m[32m* `removeUnusedAtRules` level 2 optimization controlling removal of unused `@counter-style`, `@font-face`, `@keyframes`, and `@namespace` at rules;[m
+[32m+[m[32m* the [web interface](https://jakubpawlowicz.github.io/clean-css) gets an improved settings panel with "reset to defaults", instant option changes, and settings being persisted across sessions.[m
+[32m+[m
+[32m+[m[32m## What's new in version 4.2[m
+[32m+[m
+[32m+[m[32mclean-css 4.2 introduces the following changes / features:[m
+[32m+[m
+[32m+[m[32m* Adds `process` method for compatibility with optimize-css-assets-webpack-plugin;[m
+[32m+[m[32m* new `transition` property optimizer;[m
+[32m+[m[32m* preserves any CSS content between `/* clean-css ignore:start */` and `/* clean-css ignore:end */` comments;[m
+[32m+[m[32m* allows filtering based on selector in `transform` callback, see [example](#how-to-apply-arbitrary-transformations-to-css-properties);[m
+[32m+[m[32m* adds configurable line breaks via `format: { breakWith: 'lf' }` option.[m
+[32m+[m
+[32m+[m[32m## Constructor options[m
+[32m+[m
+[32m+[m[32mclean-css constructor accepts a hash as a parameter with the following options available:[m
+[32m+[m
+[32m+[m[32m* `compatibility` - controls compatibility mode used; defaults to `ie10+`; see [compatibility modes](#compatibility-modes) for examples;[m
+[32m+[m[32m* `fetch` - controls a function for handling remote requests; see [fetch option](#fetch-option) for examples (since 4.1.0);[m
+[32m+[m[32m* `format` - controls 
