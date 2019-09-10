@@ -17,7 +17,7 @@ socket.on('data', function (dataSerial) {
             n=n+1;
         }
     }
-
+///test
     
     
 });
